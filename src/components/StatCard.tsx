@@ -1,3 +1,4 @@
+//je suis pilote
 interface StatCardProps {
   titre: string;
   valeur: number;
