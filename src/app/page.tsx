@@ -1,3 +1,7 @@
+ composant/medecin
+ composant/medecin
+import PatientCard from "@/components/PatientCard";
+
  composant/gardien
 import styles from "./page.module.css";
 import PatientCard from "../components/PatientCard";
@@ -34,12 +38,26 @@ export default function Home() {
       <p className={`text-sm text-gray-400 italic text-center ${styles.disclaimer}`}>
         Ceci n'est pas un outil médical. Consultez un professionnel de santé.
       </p>
+ main
 
 import StatCard from "@/components/StatCard";
+ main
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-gray-50 p-8">
+ composant/medecin
+      <h1 className="text-3xl font-bold text-teal-700 mb-6">
+        SénSanté
+      </h1>
+      <p className="text-gray-600 mb-8">
+        Assistant de santé communautaire avec IA
+      </p>
+      <h2 className="text-xl font-semibold text-gray-700 mb-4">
+        Membres
+      </h2>
+      <PatientCard />
+
       
       <h1 className="text-3xl font-bold text-teal-700 mb-6">
         SénSanté
