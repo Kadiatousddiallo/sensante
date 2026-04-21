@@ -1,3 +1,4 @@
+composant/gardien
 interface PatientCardProps {
   nom: string;
   region: string;
@@ -24,6 +25,22 @@ export default function PatientCard({
       </div>
       <p className="text-gray-600 mt-1">
         {region} — {age} ans
+
+export default function PatientCard() {
+  const nom = "Aminata Sow";
+  const region = "Dakar";
+  const age = 34;
+
+  return (
+    <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-teal-500">
+      <h3 className="text-lg font-bold text-gray-800">
+        {nom}
+      </h3>
+      <p className="text-gray-600 mt-1">
+        Région : {region}
+      </p>
+      <p className="text-gray-500 text-sm mt-1">
+ main
       </p>
     </div>
   );
