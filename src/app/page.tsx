@@ -89,7 +89,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* FOOTER */}
       <footer className="mt-auto pt-8 border-t border-teal-100 text-center">
         <p className={`text-sm text-gray-400 italic ${styles.disclaimer}`}>
