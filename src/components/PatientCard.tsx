@@ -4,14 +4,16 @@ interface PatientCardProps {
   age: number;
   sexe: "M" | "F";
 }
-
 export default function PatientCard({
-  nom, region, age, sexe
+  nom,
+  region,
+  age,
+  sexe,
 }: PatientCardProps) {
-  const badgeColor = sexe === "F"
-    ? "bg-pink-100 text-pink-700"
-    : "bg-blue-100 text-blue-700";
-
+  const badgeColor =
+    sexe === "F"
+      ? "bg-pink-100 text-pink-700"
+      : "bg-blue-100 text-blue-700";
   return (
     <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-teal-500 transition-transform hover:scale-[1.02]">
       <div className="flex items-center justify-between">

@@ -1,5 +1,5 @@
 import styles from "./page.module.css";
-import PatientCard from "../components/PatientCard";
+import PatientCard from "@/components/PatientCard";
 import StatCard from "@/components/StatCard";
 import AlerteIA from "@/components/AlerteIA";
 import LoginButton from "@/components/LoginButton";
@@ -27,24 +27,9 @@ export default function Home() {
           Tableau de bord
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <StatCard 
-            titre="Patients" 
-            valeur={127} 
-            unite="total enregistrés" 
-            couleur="border-teal-500" 
-          />
-          <StatCard 
-            titre="Consultations" 
-            valeur={43} 
-            unite="ce mois-ci" 
-            couleur="border-blue-500" 
-          />
-          <StatCard 
-            titre="Alertes IA" 
-            valeur={12} 
-            unite="urgences détectées" 
-            couleur="border-orange-500" 
-          />
+          <StatCard titre="Patients" valeur={127} unite="total enregistrés" couleur="border-teal-500" />
+          <StatCard titre="Consultations" valeur={43} unite="ce mois-ci" couleur="border-blue-500" />
+          <StatCard titre="Alertes IA" valeur={12} unite="urgences détectées" couleur="border-orange-500" />
         </div>
       </section>
 
@@ -55,16 +40,8 @@ export default function Home() {
           Alertes Intelligence Artificielle
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <AlerteIA 
-            diagnostic="Suspicion de paludisme" 
-            confiance={85} 
-            niveau="urgent" 
-          />
-          <AlerteIA 
-            diagnostic="Contrôle de routine prénatal" 
-            confiance={92} 
-            niveau="faible" 
-          />
+          <AlerteIA diagnostic="Suspicion de paludisme" confiance={85} niveau="urgent" />
+          <AlerteIA diagnostic="Contrôle de routine prénatal" confiance={92} niveau="faible" />
         </div>
       </section>
 
@@ -89,6 +66,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
       {/* FOOTER */}
       <footer className="mt-auto pt-8 border-t border-teal-100 text-center">
         <p className={`text-sm text-gray-400 italic ${styles.disclaimer}`}>
