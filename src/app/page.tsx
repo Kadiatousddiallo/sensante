@@ -1,107 +1,65 @@
- composant/medecin
- composant/medecin
-import PatientCard from "@/components/PatientCard";
-
- composant/gardien
 import styles from "./page.module.css";
-import PatientCard from "../components/PatientCard";
-
-export default function Home() {
-  return (
-    <main className={styles.page}>
-      <header className={styles.header}>
-        <div className="text-center">
-          <h1 className={`text-5xl font-bold text-teal-700 mb-4 ${styles.title}`}>
-            SénSanté
-          </h1>
-          <p className={`text-xl text-gray-600 mb-8 ${styles.subtitle}`}>
-            Assistant de santé communautaire avec IA
-          </p>
-        </div>
-      </header>
-      <section className={styles.section}>
-        <h2 className="text-xl font-semibold text-slate-900">Patients</h2>
-        <div
-          className={`${styles.grid} grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3`}
-        >
-          <div className={styles.cardWrap}>
-            <PatientCard nom="Boubacar Bathily" region="Dakar" age={21} sexe="M" />
-          </div>
-          <div className={styles.cardWrap}>
-            <PatientCard nom="Mamadou Ndiaye" region="Thiès" age={41} sexe="M" />
-          </div>
-          <div className={styles.cardWrap}>
-            <PatientCard nom="Fatou Sow" region="Saint-Louis" age={27} sexe="F" />
-          </div>
-        </div>
-      </section>
-      <p className={`text-sm text-gray-400 italic text-center ${styles.disclaimer}`}>
-        Ceci n'est pas un outil médical. Consultez un professionnel de santé.
-      </p>
- main
-
+import PatientCard from "@/components/PatientCard";
 import StatCard from "@/components/StatCard";
- main
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-gray-50 p-8">
- composant/medecin
-      <h1 className="text-3xl font-bold text-teal-700 mb-6">
-        SénSanté
-      </h1>
-      <p className="text-gray-600 mb-8">
-        Assistant de santé communautaire avec IA
-      </p>
-      <h2 className="text-xl font-semibold text-gray-700 mb-4">
-        Membres
-      </h2>
-      <PatientCard />
-
       
-      <h1 className="text-3xl font-bold text-teal-700 mb-6">
-        SénSanté
-      </h1>
+      <header className="text-center mb-10">
+        <h1 className="text-5xl font-bold text-teal-700 mb-4">
+          SénSanté
+        </h1>
+        <p className="text-xl text-gray-600">
+          Assistant de santé communautaire avec IA
+        </p>
+      </header>
 
-      <p className="text-gray-600 mb-8">
-        Assistant de santé communautaire avec IA
-      </p>
+      <section className="mb-10">
+        <h2 className="text-xl font-semibold text-gray-700 mb-4">
+          Patients
+        </h2>
 
-      <h2 className="text-xl font-semibold text-gray-700 mb-4">
-        Tableau de bord
-      </h2>
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <PatientCard nom="Boubacar Bathily" region="Dakar" age={21} sexe="M" />
+          <PatientCard nom="Mamadou Ndiaye" region="Thiès" age={41} sexe="M" />
+          <PatientCard nom="Fatou Sow" region="Saint-Louis" age={27} sexe="F" />
+        </div>
+      </section>
 
-      {/* STAT CARDS */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-        
-        <StatCard 
-          titre="Patients" 
-          valeur={127} 
-          unite="enregistrés" 
-          couleur="border-teal-500" 
-        />
+      <section className="mb-10">
+        <h2 className="text-xl font-semibold text-gray-700 mb-4">
+          Tableau de bord
+        </h2>
 
-        <StatCard 
-          titre="Consultations" 
-          valeur={43} 
-          unite="ce mois" 
-          couleur="border-orange-500" 
-        />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <StatCard 
+            titre="Patients" 
+            valeur={127} 
+            unite="enregistrés" 
+            couleur="border-teal-500" 
+          />
 
-        <StatCard 
-          titre="Alertes IA" 
-          valeur={8} 
-          unite="urgentes" 
-          couleur="border-red-500" 
-        />
+          <StatCard 
+            titre="Consultations" 
+            valeur={43} 
+            unite="ce mois" 
+            couleur="border-orange-500" 
+          />
 
-      </div>
+          <StatCard 
+            titre="Alertes IA" 
+            valeur={8} 
+            unite="urgentes" 
+            couleur="border-red-500" 
+          />
+        </div>
+      </section>
 
-      <p className="text-xs text-gray-400 italic">
+      <p className="text-xs text-gray-400 italic text-center">
         Ceci n’est pas un outil médical. Consultez un professionnel de santé.
       </p>
 
- main
     </main>
   );
 }
