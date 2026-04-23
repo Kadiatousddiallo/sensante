@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+ HEAD
 interface PatientCardProps {
   nom: string;
   region: string;
@@ -28,7 +28,7 @@ export default function PatientCard({
       <p className="text-gray-600 mt-1">
         {region} — {age} ans
       </p>
-=======
+
 export default function PatientCard() {
   // CORRECTION : Les textes doivent être entre guillemets ""
   const nom = "Kadiatou Sadio Diallo";
@@ -47,7 +47,7 @@ export default function PatientCard() {
           {groupe}
         </p>
       </div>
->>>>>>> origin/composant/architecte
+ origin/composant/architecte
     </div>
   );
 }
