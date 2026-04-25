@@ -23,7 +23,7 @@ export default function PatientCard({
           {sexe === "F" ? "Femme" : "Homme"}
         </span>
       </div>
-      <p className="text-slate-500 mt-1">{region} — {age} ans</p>
+      <p className="text-slate-600 mt-1">{region} — {age} ans</p>
     </div>
   );
 }

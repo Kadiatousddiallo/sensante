@@ -16,7 +16,7 @@ export default function Home() {
           <h2 className="text-3xl font-extrabold text-slate-900 tracking-tight">
             Tableau de bord
           </h2>
-          <p className="text-slate-500 font-medium mt-1">
+          <p className="text-slate-600 font-medium mt-1">
             Bienvenue sur l'espace d'administration et de gestion communautaire
           </p>
         </div>

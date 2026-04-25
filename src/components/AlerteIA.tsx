@@ -19,13 +19,13 @@ export default function AlerteIA({
         <span className="w-2 h-2 rounded-full bg-current animate-pulse" />
         Résultat IA
       </h3>
-      <p className="mt-3 font-medium opacity-90">{diagnostic}</p>
+      <p className="mt-3 font-semibold text-[0.95rem]">{diagnostic}</p>
       <div className="flex items-center justify-between mt-4">
-        <p className="text-sm font-bold opacity-80 bg-white/40 px-3 py-1 rounded-md">
+        <p className="text-sm font-bold bg-white/60 px-3 py-1.5 rounded-md">
           Confiance : {confiance}%
         </p>
       </div>
-      <p className="text-xs opacity-60 italic mt-3 font-medium">
+      <p className="text-xs opacity-75 italic mt-3 font-medium">
         Ceci n'est pas un diagnostic médical consigné.
         Consultez un professionnel de santé.
       </p>

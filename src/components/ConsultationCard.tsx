@@ -23,8 +23,8 @@ export default function ConsultationCard({
           {statut === "termine" ? "Terminé" : "En attente"}
         </span>
       </div>
-      <p className="text-slate-500 text-sm mt-1">{date}</p>
-      <p className="text-slate-600 mt-3 bg-slate-50 p-3 rounded-lg text-sm border border-slate-100">{symptomes}</p>
+      <p className="text-slate-600 text-sm mt-1">{date}</p>
+      <p className="text-slate-700 mt-3 bg-slate-50 p-3 rounded-lg text-sm border border-slate-100">{symptomes}</p>
     </div>
   );
 }
