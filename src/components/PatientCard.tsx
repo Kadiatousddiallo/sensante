@@ -15,7 +15,7 @@ export default function PatientCard({
       ? "bg-pink-100 text-pink-700"
       : "bg-blue-100 text-blue-700";
   return (
-    <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-teal-500 transition-transform hover:scale-[1.02]">
+    <div className="glass-card rounded-xl p-6 border-l-4 border-l-teal-500">
       <div className="flex items-center justify-between">
         <h3 className="text-lg font-bold text-gray-800">{nom}</h3>
         <span className={`text-xs px-2 py-1 rounded-full ${badgeColor}`}>

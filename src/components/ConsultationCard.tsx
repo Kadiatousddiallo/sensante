@@ -13,7 +13,7 @@ export default function ConsultationCard({
     : "bg-yellow-100 text-yellow-700";
 
   return (
-    <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-orange-400">
+    <div className="glass-card rounded-xl p-6 border-l-4 border-l-orange-400">
       <div className="flex justify-between items-center">
         <h3 className="font-bold text-gray-800">
           {patient}

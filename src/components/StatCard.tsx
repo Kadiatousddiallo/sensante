@@ -13,7 +13,7 @@ export default function StatCard({
   couleur
 }: StatCardProps) {
   return (
-    <div className={`bg-white rounded-lg shadow-md p-6 border-t-4 ${couleur}`}>
+    <div className={`glass-card rounded-xl p-6 border-t-4 ${couleur}`}>
       <p className="text-sm text-gray-500">{titre}</p>
 
       <p className="text-3xl font-bold text-gray-800 mt-2">

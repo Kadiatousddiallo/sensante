@@ -1,4 +1,26 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-800 antialiased;
+    /* subtle background pattern */
+    background-image: 
+      radial-gradient(at 100% 0%, hsla(180, 100%, 95%, 0.6) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, hsla(210, 100%, 96%, 0.5) 0px, transparent 50%);
+    background-attachment: fixed;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/70 backdrop-blur-md border border-white/80 shadow-sm hover:shadow-md transition-shadow;
+  }
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-lg border border-white/60 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-teal-100;
+  }
+}
 
 :root {
   --background: #ffffff;
