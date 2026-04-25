@@ -1,4 +1,3 @@
-//je suis pilote
 interface StatCardProps {
   titre: string;
   valeur: number;
@@ -13,14 +12,14 @@ export default function StatCard({
   couleur
 }: StatCardProps) {
   return (
-    <div className={`bg-white rounded-lg shadow-md p-6 border-t-4 ${couleur}`}>
-      <p className="text-sm text-gray-500">{titre}</p>
+    <div className={`bg-white rounded-2xl p-6 border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border-t-[3px] ${couleur}`}>
+      <p className="text-sm font-semibold text-slate-600">{titre}</p>
 
-      <p className="text-3xl font-bold text-gray-800 mt-2">
+      <p className="text-4xl font-extrabold text-slate-900 mt-3 tracking-tight">
         {valeur}
       </p>
 
-      <p className="text-sm text-gray-400">{unite}</p>
+      <p className="text-sm text-slate-500 mt-1 font-medium">{unite}</p>
     </div>
   );
 }
