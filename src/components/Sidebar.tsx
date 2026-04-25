@@ -14,7 +14,7 @@ const liens = [
 export default function Sidebar() {
   const pathname = usePathname();
   return (
-    <aside className="w-64 bg-slate-950 text-slate-300 min-h-screen relative flex flex-col border-r border-slate-800">
+    <aside className="w-64 bg-white text-slate-600 min-h-screen relative flex flex-col border-r border-slate-200 shadow-sm">
       <nav className="space-y-2 relative z-10 p-6 flex-1 pt-8">
         {liens.map((lien) => {
           const actif = pathname === lien.href;
@@ -25,14 +25,17 @@ export default function Sidebar() {
               href={lien.href}
               className={`flex items-center gap-4 px-4 py-3.5 rounded-xl transition-all duration-300 group ${
                 actif 
-                  ? "bg-teal-500 text-white shadow-lg shadow-teal-500/25" 
-                  : "text-slate-400 hover:bg-slate-800 hover:text-white"
+                  ? "bg-teal-50 text-teal-800 font-bold border border-teal-100 shadow-sm" 
+                  : "text-slate-500 hover:bg-slate-50 hover:text-teal-700 font-medium border border-transparent"
               }`}
             >
               <span className={`flex items-center justify-center transition-transform duration-300 ${actif ? "scale-110" : "group-hover:scale-110"}`}>
-                <IconComponent size={20} className={actif ? "text-white" : "text-slate-400 group-hover:text-white transition-colors"} />
+                <IconComponent 
+                  size={20} 
+                  className={actif ? "text-teal-600" : "text-slate-400 group-hover:text-teal-600 transition-colors"} 
+                />
               </span>
-              <span className="font-medium">{lien.nom}</span>
+              <span>{lien.nom}</span>
             </Link>
           );
         })}
