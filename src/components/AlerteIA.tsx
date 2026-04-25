@@ -8,20 +8,25 @@ export default function AlerteIA({
   diagnostic, confiance, niveau
 }: AlerteIAProps) {
   const couleurs = {
-    faible: "border-green-500 bg-green-50/80 backdrop-blur-sm shadow-green-100/50",
-    moyen: "border-orange-500 bg-orange-50/80 backdrop-blur-sm shadow-orange-100/50",
-    urgent: "border-red-500 bg-red-50/80 backdrop-blur-sm shadow-red-100/50 animate-pulse",
+    faible: "border-emerald-500 bg-emerald-50 text-emerald-800",
+    moyen: "border-amber-500 bg-amber-50 text-amber-800",
+    urgent: "border-rose-500 bg-rose-50 text-rose-800",
   };
 
   return (
-    <div className={`rounded-xl p-6 border-l-4 shadow-lg transition-transform hover:scale-[1.02] ${couleurs[niveau]}`}>
-      <h3 className="font-bold text-gray-800">Résultat IA</h3>
-      <p className="mt-2 text-gray-700">{diagnostic}</p>
-      <p className="text-sm text-gray-500 mt-1">
-        Confiance : {confiance}%
-      </p>
-      <p className="text-xs text-gray-400 italic mt-3">
-        Ceci n'est pas un diagnostic médical.
+    <div className={`rounded-2xl p-6 border border-l-[6px] shadow-sm hover:shadow-md transition-all duration-300 ${couleurs[niveau]}`}>
+      <h3 className="font-extrabold flex items-center gap-2">
+        <span className="w-2 h-2 rounded-full bg-current animate-pulse" />
+        Résultat IA
+      </h3>
+      <p className="mt-3 font-medium opacity-90">{diagnostic}</p>
+      <div className="flex items-center justify-between mt-4">
+        <p className="text-sm font-bold opacity-80 bg-white/40 px-3 py-1 rounded-md">
+          Confiance : {confiance}%
+        </p>
+      </div>
+      <p className="text-xs opacity-60 italic mt-3 font-medium">
+        Ceci n'est pas un diagnostic médical consigné.
         Consultez un professionnel de santé.
       </p>
     </div>

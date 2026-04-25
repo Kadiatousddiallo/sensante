@@ -1,13 +1,13 @@
 export default function Header() {
   return (
-    <header className="bg-gradient-to-r from-teal-800 to-teal-600 text-white p-4 px-8 flex items-center justify-between shadow-lg sticky top-0 z-50">
+    <header className="bg-white text-slate-800 p-4 px-8 flex items-center justify-between border-b border-slate-200 sticky top-0 z-50">
       <div className="flex items-center gap-3">
-        <div className="w-9 h-9 bg-white/20 rounded-xl flex items-center justify-center backdrop-blur-sm border border-white/30 shadow-inner">
-          <span className="font-extrabold text-lg">S</span>
+        <div className="w-10 h-10 bg-teal-600 rounded-xl flex items-center justify-center shadow-md shadow-teal-600/30">
+          <span className="font-extrabold text-xl text-white">S</span>
         </div>
-        <h1 className="text-xl font-extrabold tracking-tight">SénSanté</h1>
+        <h1 className="text-2xl font-extrabold tracking-tight text-slate-900">SénSanté</h1>
       </div>
-      <span className="text-sm font-medium bg-teal-900/30 px-4 py-1.5 rounded-full border border-teal-500/30 backdrop-blur-sm shadow-sm">
+      <span className="text-sm font-semibold bg-teal-50 text-teal-700 px-4 py-2 rounded-full border border-teal-100">
         Assistant de santé communautaire
       </span>
     </header>
