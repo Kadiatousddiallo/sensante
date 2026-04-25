@@ -18,12 +18,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr">
-      <body className={`${inter.className} bg-slate-50 text-slate-900 antialiased`}>
+      <body className={inter.className}>
         <div className="flex flex-col min-h-screen">
           <Header />
           <div className="flex flex-1">
             <Sidebar />
-            <main className="flex-1 bg-transparent p-8 md:p-12 overflow-y-auto w-full relative z-0">
+            <main className="flex-1 bg-gray-50 p-8">
               {children}
             </main>
           </div>
