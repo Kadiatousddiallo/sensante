@@ -20,3 +20,14 @@ echo '```' >> README.md
 echo '' >> README.md
 echo '## Équipe ' >> README.md
 echo 'Licence 3 GLSI - ESP/UCAD - 2025-2026' >> README.md
+## Authentification — v0.3
+
+Copier `.env.example` vers `.env` :
+```bash
+cp .env.example .env
+```
+Générer un secret :
+```bash
+openssl rand -base64 32
+```
+Coller le résultat dans `NEXTAUTH_SECRET`. Ne jamais committer `.env`.
