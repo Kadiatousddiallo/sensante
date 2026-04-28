@@ -5,8 +5,29 @@ import StatCard from "@/components/StatCard";
 import LoginButton from "@/components/LoginButton";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { prisma } from "@/lib/prisma";
 
-export default function Home() {
+export const dynamic = "force-dynamic";
+
+export default async function Home() {
+  const patients = await prisma.patient.findMany({
+    orderBy: { createdAt: "desc" },
+    take: 4,
+  });
+
+  const nbPatients = await prisma.patient.count();
+
+  function calculerAge(dateNaissance: Date | string): number {
+    const naissance = new Date(dateNaissance);
+    const today = new Date();
+    let age = today.getFullYear() - naissance.getFullYear();
+    const m = today.getMonth() - naissance.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < naissance.getDate())) {
+      age--;
+    }
+    return age;
+  }
+
   return (
     <div className="max-w-7xl mx-auto w-full animate-in fade-in duration-500 py-4">
       
@@ -25,7 +46,7 @@ export default function Home() {
 
       {/* STATISTIQUES */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
-        <StatCard titre="Patients" valeur={127} unite="Inscrits globaux" couleur="border-teal-500" />
+        <StatCard titre="Patients" valeur={nbPatients} unite="Inscrits globaux" couleur="border-teal-500" />
         <StatCard titre="Consultations" valeur={43} unite="Réalisées ce mois-ci" couleur="border-orange-500" />
         <StatCard titre="Alertes IA" valeur={8} unite="Dossiers à haut risque" couleur="border-rose-500" />
       </div>
@@ -46,10 +67,19 @@ export default function Home() {
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 flex-1">
-            <PatientCard nom="Aminata Sow" region="Dakar — Parcelles" age={34} sexe="F" />
-            <PatientCard nom="Ibrahima Ba" region="Thiès — Mbour" age={45} sexe="M" />
-            <PatientCard nom="Awa Diallo" region="Saint-Louis — Ndar" age={28} sexe="F" />
-            <PatientCard nom="Cheikh Fall" region="Ziguinchor — Bignona" age={52} sexe="M" />
+            {patients.length > 0 ? (
+              patients.map((p) => (
+                <PatientCard
+                  key={p.id}
+                  nom={`${p.prenom} ${p.nom}`}
+                  region={p.region}
+                  age={calculerAge(p.dateNaissance)}
+                  sexe={p.sexe as "M" | "F"}
+                />
+              ))
+            ) : (
+              <p className="text-slate-500 col-span-2">Aucun patient enregistré.</p>
+            )}
           </div>
         </div>
 
