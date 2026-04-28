@@ -1,64 +1,29 @@
-composant/gardien
 interface PatientCardProps {
   nom: string;
   region: string;
   age: number;
   sexe: "M" | "F";
 }
-
 export default function PatientCard({
-  nom, region, age, sexe
+  nom,
+  region,
+  age,
+  sexe,
 }: PatientCardProps) {
-  const badgeColor = sexe === "F"
-    ? "bg-pink-100 text-pink-700"
-    : "bg-blue-100 text-blue-700";
-
+  const badgeColor =
+    sexe === "F"
+      ? "bg-pink-50 text-pink-700 border-pink-200"
+      : "bg-blue-50 text-blue-700 border-blue-200";
   return (
-    <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-teal-500">
+    <div className="bg-white rounded-2xl p-6 border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative overflow-hidden">
+      <div className="absolute left-0 top-0 bottom-0 w-1 bg-teal-500" />
       <div className="flex items-center justify-between">
-        <h3 className="text-lg font-bold text-gray-800">
-          {nom}
-        </h3>
-        <span className={`text-xs px-2 py-1 rounded-full ${badgeColor}`}>
+        <h3 className="text-lg font-bold text-slate-800">{nom}</h3>
+        <span className={`text-xs px-2.5 py-1 rounded-full border font-medium ${badgeColor}`}>
           {sexe === "F" ? "Femme" : "Homme"}
         </span>
       </div>
-      <p className="text-gray-600 mt-1">
-        {region} — {age} ans
-
-export default function PatientCard() {
-composant/medecin
-  const nom = "Mame";
-  const fonction = "Médecin";
-  const groupe = "Groupe 6";
-
-  const nom = "Aminata Sow";
-  const region = "Dakar";
-  const age = 34;
-main
-
-  return (
-    <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-teal-500">
-      <h3 className="text-lg font-bold text-gray-800">
-        {nom}
-      </h3>
-      <p className="text-gray-600 mt-1">
-composant/medecin
-        Fonction : {fonction}
-      </p>
-      <p className="text-gray-500 text-sm mt-1">
-        {groupe}
-      </p>
+      <p className="text-slate-600 mt-1">{region} — {age} ans</p>
     </div>
   );
 }
-
-        Région : {region}
-      </p>
-      <p className="text-gray-500 text-sm mt-1">
- main
-      </p>
-    </div>
-  );
-}
- main

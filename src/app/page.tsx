@@ -1,48 +1,60 @@
-import StatCard from "@/components/StatCard";
 import PatientCard from "@/components/PatientCard";
-import styles from "./page.module.css";
+import ConsultationCard from "@/components/ConsultationCard";
+import AlerteIA from "@/components/AlerteIA";
+import StatCard from "@/components/StatCard";
+import LoginButton from "@/components/LoginButton";
 
 export default function Home() {
   return (
-    <main className={styles.page}>
-      <header className={styles.header}>
-        <div className="text-center">
-          <h1 className={`text-5xl font-bold text-teal-700 mb-4 ${styles.title}`}>
-            SénSanté
-          </h1>
-          <p className={`text-xl text-gray-600 mb-8 ${styles.subtitle}`}>
-            Assistant de santé communautaire avec IA
-          </p>
-        </div>
-      </header>
+    <div className="min-h-screen bg-gray-50 p-8">
 
-      <section className={styles.section}>
-        <h2 className="text-xl font-semibold text-gray-700 mb-4">Tableau de bord</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-          <StatCard titre="Patients" valeur={127} unite="enregistrés" couleur="border-teal-500" />
-          <StatCard titre="Consultations" valeur={43} unite="ce mois" couleur="border-orange-500" />
-          <StatCard titre="Alertes IA" valeur={8} unite="urgentes" couleur="border-red-500" />
-        </div>
-      </section>
+      {/* HEADER */}
+      <div className="flex justify-between items-center mb-8">
+        <h1 className="text-3xl font-bold text-teal-700">
+          SénSanté
+        </h1>
+        <LoginButton />
+      </div>
 
-      <section className={styles.section}>
-        <h2 className="text-xl font-semibold text-slate-900 mb-4">Patients</h2>
-        <div className={`${styles.grid} grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3`}>
-          <div className={styles.cardWrap}>
-            <PatientCard nom="Boubacar Bathily" region="Dakar" age={21} sexe="M" />
-          </div>
-          <div className={styles.cardWrap}>
-            <PatientCard nom="Mamadou Ndiaye" region="Thiès" age={41} sexe="M" />
-          </div>
-          <div className={styles.cardWrap}>
-            <PatientCard nom="Fatou Sow" region="Saint-Louis" age={27} sexe="F" />
-          </div>
-        </div>
-      </section>
+      {/* STATS */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+        <StatCard titre="Patients" valeur={127} unite="enregistrés" couleur="border-teal-500" />
+        <StatCard titre="Consultations" valeur={43} unite="ce mois" couleur="border-orange-500" />
+        <StatCard titre="Alertes IA" valeur={8} unite="urgentes" couleur="border-red-500" />
+      </div>
 
-      <p className={`text-sm text-gray-400 italic text-center ${styles.disclaimer}`}>
-        Ceci n'est pas un outil médical. Consultez un professionnel de santé.
-      </p>
-    </main>
+      {/* PATIENTS */}
+      <h2 className="text-xl font-semibold text-gray-700 mb-4">
+        Derniers patients
+      </h2>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+        <PatientCard nom="Aminata Sow" region="Dakar" age={34} sexe="F" />
+        <PatientCard nom="Ibrahima Ba" region="Thiès" age={45} sexe="M" />
+        <PatientCard nom="Awa Diallo" region="Saint-Louis" age={28} sexe="F" />
+      </div>
+
+      {/* CONSULTATION */}
+      <h2 className="text-xl font-semibold text-gray-700 mb-4">
+        Dernière consultation
+      </h2>
+
+      <ConsultationCard
+        patient="Aminata Sow"
+        date="18 mars 2025"
+        symptomes="Fièvre, toux, fatigue"
+        statut="termine"
+      />
+
+      {/* ALERTE IA */}
+      <div className="mt-6">
+        <AlerteIA
+          diagnostic="Suspicion de paludisme. Orientation recommandée."
+          confiance={78}
+          niveau="urgent"
+        />
+      </div>
+
+    </div>
   );
 }
