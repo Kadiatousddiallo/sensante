@@ -42,8 +42,8 @@ export default function PatientsPage() {
   }
 
   return (
-    <div>
-      <h1 className="text-2xl font-bold text-gray-800 mb-6">
+    <div className="max-w-7xl mx-auto w-full animate-in fade-in duration-500 slide-in-from-bottom-4">
+      <h1 className="text-3xl font-extrabold text-slate-800 mb-8 tracking-tight">
         Patients
       </h1>
 <<<<<<< HEAD
@@ -92,3 +92,4 @@ main
     </div>
   );
 }
+
