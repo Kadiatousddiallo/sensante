@@ -46,12 +46,9 @@ export default function PatientsPage() {
       <h1 className="text-3xl font-extrabold text-slate-800 mb-8 tracking-tight">
         Patients
       </h1>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
+ HEAD
 lab2-complete
-=======
->>>>>>> 96c04394d13cc47348744b1b0b4e1cafd8e66ffd
+ 96c04394d13cc47348744b1b0b4e1cafd8e66ffd
 
       <PatientForm onSuccess={chargerPatients} />
 
@@ -78,17 +75,15 @@ lab2-complete
           ))}
         </div>
       )}
-<<<<<<< HEAD
-
->>>>>>> f1efccfc60eac4de1faf9ff78cb52e68378597ab
+HEAD
+f1efccfc60eac4de1faf9ff78cb52e68378597ab
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {patients.map((p, i) => (
           <PatientCard key={i} {...p} />
         ))}
       </div>
 main
-=======
->>>>>>> 96c04394d13cc47348744b1b0b4e1cafd8e66ffd
+96c04394d13cc47348744b1b0b4e1cafd8e66ffd
     </div>
   );
 }
