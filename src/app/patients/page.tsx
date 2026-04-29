@@ -47,6 +47,7 @@ export default function PatientsPage() {
         Patients
       </h1>
  HEAD
+  HEAD
 lab2-complete
  96c04394d13cc47348744b1b0b4e1cafd8e66ffd
 
