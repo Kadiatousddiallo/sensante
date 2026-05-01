@@ -19,12 +19,13 @@ export default function PatientsPage() {
   const [patients, setPatients] = useState<Patient[]>([]);
   const [loading, setLoading] = useState(true);
 
-  async function chargerPatients() {
-    const res = await fetch("/api/patients");
-    const data = await res.json();
-    setPatients(data);
-    setLoading(false);
-  }
+ async function chargerPatients() {
+  const res = await fetch("/api/patients");
+  const data = await res.json();
+  // Ajoute cette vérification :
+  setPatients(Array.isArray(data) ? data : []);
+  setLoading(false);
+}
 
   useEffect(() => {
     chargerPatients();
