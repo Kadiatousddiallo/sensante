@@ -37,7 +37,6 @@ export default function PatientForm({
       form.reset();
       onSuccess();
     }
-
     setLoading(false);
   }
 
@@ -49,52 +48,33 @@ export default function PatientForm({
   ];
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="bg-white rounded-2xl shadow-md p-6 space-y-4 border border-slate-100"
-    >
-      <h3 className="text-lg font-bold text-slate-800">
+    <form onSubmit={handleSubmit}
+      className="bg-white rounded-lg shadow-md p-6 space-y-4">
+      <h3 className="text-lg font-bold text-gray-800">
         Nouveau patient
       </h3>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <input
-          name="nom"
-          placeholder="Nom"
+        <input name="nom" placeholder="Nom"
           required
-          className="p-3 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition"
-        />
-        <input
-          name="prenom"
-          placeholder="Prénom"
+          className="p-3 border rounded-lg" />
+        <input name="prenom" placeholder="Prénom"
           required
-          className="p-3 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition"
-        />
-        <input
-          name="dateNaissance"
-          type="date"
+          className="p-3 border rounded-lg" />
+        <input name="dateNaissance" type="date"
           required
-          className="p-3 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition"
-        />
-        <select
-          name="sexe"
-          required
-          className="p-3 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition"
-        >
+          className="p-3 border rounded-lg" />
+        <select name="sexe" required
+          className="p-3 border rounded-lg">
           <option value="">Sexe</option>
           <option value="F">Femme</option>
           <option value="M">Homme</option>
         </select>
-        <input
-          name="telephone"
+        <input name="telephone"
           placeholder="Téléphone (optionnel)"
-          className="p-3 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition"
-        />
-        <select
-          name="region"
-          required
-          className="p-3 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition"
-        >
+          className="p-3 border rounded-lg" />
+        <select name="region" required
+          className="p-3 border rounded-lg">
           <option value="">Région</option>
           {regions.map((r) => (
             <option key={r} value={r}>{r}</option>
@@ -102,17 +82,12 @@ export default function PatientForm({
         </select>
       </div>
 
-      <input
-        name="adresse"
+      <input name="adresse"
         placeholder="Adresse (optionnel)"
-        className="w-full p-3 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition"
-      />
+        className="w-full p-3 border rounded-lg" />
 
-      <button
-        type="submit"
-        disabled={loading}
-        className="bg-teal-600 text-white px-6 py-3 rounded-lg hover:bg-teal-700 transition-all duration-200 disabled:opacity-50 font-semibold shadow-sm hover:shadow-md"
-      >
+      <button type="submit" disabled={loading}
+        className="bg-teal-600 text-white px-6 py-3 rounded-lg hover:bg-teal-700 transition disabled:opacity-50">
         {loading ? "Enregistrement..." : "Enregistrer"}
       </button>
     </form>

@@ -1,15 +1,31 @@
+"use client";
+import { useSession, signOut } from "next-auth/react";
+import Link from "next/link";
+
 export default function Header() {
+  const { data: session } = useSession();
+
   return (
-    <header className="bg-white text-slate-800 p-4 px-8 flex items-center justify-between border-b border-slate-200 sticky top-0 z-50">
-      <div className="flex items-center gap-3">
-        <div className="w-10 h-10 bg-teal-600 rounded-xl flex items-center justify-center shadow-md shadow-teal-600/30">
-          <span className="font-extrabold text-xl text-white">S</span>
-        </div>
-        <h1 className="text-2xl font-extrabold tracking-tight text-slate-900">SénSanté</h1>
+    <header className="bg-teal-700 text-white p-4 flex items-center justify-between">
+      <h1 className="text-xl font-bold">SénSanté</h1>
+      <div className="flex items-center gap-4">
+        {session ? (
+          <>
+            <span className="text-sm text-teal-200">
+              {session.user?.name}
+            </span>
+            <button onClick={() => signOut()}
+              className="text-sm bg-teal-600 px-3 py-1 rounded hover:bg-teal-500 transition">
+              Déconnexion
+            </button>
+          </>
+        ) : (
+          <Link href="/login"
+            className="text-sm bg-teal-600 px-3 py-1 rounded hover:bg-teal-500 transition">
+            Se connecter
+          </Link>
+        )}
       </div>
-      <span className="text-sm font-semibold bg-teal-50 text-teal-700 px-4 py-2 rounded-full border border-teal-100">
-        Assistant de santé communautaire
-      </span>
     </header>
   );
 }

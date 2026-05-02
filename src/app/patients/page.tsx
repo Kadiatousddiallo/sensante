@@ -1,5 +1,4 @@
 "use client";
-
 import { useEffect, useState } from "react";
 import PatientCard from "@/components/PatientCard";
 import PatientForm from "@/components/PatientForm";
@@ -16,7 +15,6 @@ interface Patient {
 }
 
 export default function PatientsPage() {
- lab2-complete
   const [patients, setPatients] = useState<Patient[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -42,35 +40,26 @@ export default function PatientsPage() {
     return age;
   }
 
-  const patients = [
-    { nom: "Aminata Sow",  region: "Dakar",       age: 34, sexe: "F" as const },
-    { nom: "Ibrahima Ba",  region: "Thiès",        age: 45, sexe: "M" as const },
-    { nom: "Awa Diallo",   region: "Saint-Louis",  age: 28, sexe: "F" as const },
-    { nom: "Cheikh Fall",  region: "Ziguinchor",   age: 52, sexe: "M" as const },
-  ];
-main
-
   return (
     <div>
       <h1 className="text-2xl font-bold text-gray-800 mb-6">
         Patients
       </h1>
-lab2-complete
 
       <PatientForm onSuccess={chargerPatients} />
 
-      <h2 className="text-xl font-semibold text-slate-700 mt-8 mb-4">
+      <h2 className="text-xl font-semibold text-gray-700 mt-8 mb-4">
         Liste des patients ({patients.length})
       </h2>
 
       {loading ? (
-        <p className="text-slate-500">Chargement...</p>
+        <p className="text-gray-500">Chargement...</p>
       ) : patients.length === 0 ? (
-        <p className="text-slate-500">
+        <p className="text-gray-500">
           Aucun patient enregistré.
         </p>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {patients.map((p) => (
             <PatientCard
               key={p.id}
@@ -82,13 +71,6 @@ lab2-complete
           ))}
         </div>
       )}
-
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {patients.map((p, i) => (
-          <PatientCard key={i} {...p} />
-        ))}
-      </div>
-main
     </div>
   );
 }
