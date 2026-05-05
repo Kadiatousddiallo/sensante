@@ -20,4 +20,18 @@ model Patient {
   region         String
   createdAt      DateTime  @default(now())
   updatedAt      DateTime  @updatedAt
+  consultations Consultation[]
+}
+
+model Consultation {
+  id           Int       @id @default(autoincrement())
+  patient      Patient   @relation(fields: [patientId], references: [id])
+  patientId    Int
+  symptomes    Json
+  notes        String?
+  diagnosticIa String?
+  confiance    Int?
+  statut       String    @default("en_attente")
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
 }
