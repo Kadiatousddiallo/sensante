@@ -13,20 +13,14 @@ export default function LoginPage() {
     e.preventDefault();
     setLoading(true);
     setError("");
-<<<<<<< page/bouclier
 
-=======
->>>>>>> main
     const formData = new FormData(e.currentTarget);
     const res = await signIn("credentials", {
       email: formData.get("email"),
       password: formData.get("password"),
       redirect: false,
     });
-<<<<<<< page/bouclier
 
-=======
->>>>>>> main
     if (res?.error) {
       setError("Email ou mot de passe incorrect");
     } else {
@@ -42,7 +36,6 @@ export default function LoginPage() {
           Connexion à SénSanté
         </h1>
         {error && (
-<<<<<<< page/bouclier
           <p className="bg-red-50 text-red-600 p-3 rounded-lg mb-4 text-sm">
             {error}
           </p>
@@ -67,29 +60,14 @@ export default function LoginPage() {
             disabled={loading}
             className="w-full bg-teal-600 text-white py-3 rounded-lg hover:bg-teal-700 transition disabled:opacity-50"
           >
-=======
-          <p className="bg-red-50 text-red-600 p-3 rounded-lg mb-4 text-sm">{error}</p>
-        )}
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <input name="email" type="email" placeholder="Email" required
-            className="w-full p-3 border rounded-lg" />
-          <input name="password" type="password" placeholder="Mot de passe" required
-            className="w-full p-3 border rounded-lg" />
-          <button type="submit" disabled={loading}
-            className="w-full bg-teal-600 text-white py-3 rounded-lg hover:bg-teal-700 transition disabled:opacity-50">
->>>>>>> main
             {loading ? "Connexion..." : "Se connecter"}
           </button>
         </form>
         <p className="text-sm text-gray-500 text-center mt-4">
           Pas encore de compte ?{" "}
-<<<<<<< page/bouclier
           <Link href="/register" className="text-teal-600 hover:underline">
             S'inscrire
           </Link>
-=======
-          <Link href="/register" className="text-teal-600 hover:underline">S'inscrire</Link>
->>>>>>> main
         </p>
       </div>
     </div>
