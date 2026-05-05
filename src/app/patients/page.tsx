@@ -16,16 +16,25 @@ interface Patient {
 }
 
 export default function PatientsPage() {
- lab2-complete
   const [patients, setPatients] = useState<Patient[]>([]);
   const [loading, setLoading] = useState(true);
 
+medecin/consultations
   async function chargerPatients() {
     const res = await fetch("/api/patients");
     const data = await res.json();
     setPatients(data);
     setLoading(false);
   }
+  
+ async function chargerPatients() {
+  const res = await fetch("/api/patients");
+  const data = await res.json();
+  // Ajoute cette vérification :
+  setPatients(Array.isArray(data) ? data : []);
+  setLoading(false);
+}
+ main
 
   useEffect(() => {
     chargerPatients();
@@ -42,20 +51,15 @@ export default function PatientsPage() {
     return age;
   }
 
-  const patients = [
-    { nom: "Aminata Sow",  region: "Dakar",       age: 34, sexe: "F" as const },
-    { nom: "Ibrahima Ba",  region: "Thiès",        age: 45, sexe: "M" as const },
-    { nom: "Awa Diallo",   region: "Saint-Louis",  age: 28, sexe: "F" as const },
-    { nom: "Cheikh Fall",  region: "Ziguinchor",   age: 52, sexe: "M" as const },
-  ];
-main
-
   return (
-    <div>
-      <h1 className="text-2xl font-bold text-gray-800 mb-6">
+    <div className="max-w-7xl mx-auto w-full animate-in fade-in duration-500 slide-in-from-bottom-4">
+      <h1 className="text-3xl font-extrabold text-slate-800 mb-8 tracking-tight">
         Patients
       </h1>
+ HEAD
+  HEAD
 lab2-complete
+ 96c04394d13cc47348744b1b0b4e1cafd8e66ffd
 
       <PatientForm onSuccess={chargerPatients} />
 
@@ -82,13 +86,16 @@ lab2-complete
           ))}
         </div>
       )}
-
+HEAD
+f1efccfc60eac4de1faf9ff78cb52e68378597ab
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {patients.map((p, i) => (
           <PatientCard key={i} {...p} />
         ))}
       </div>
 main
+96c04394d13cc47348744b1b0b4e1cafd8e66ffd
     </div>
   );
 }
+
