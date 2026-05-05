@@ -20,15 +20,43 @@ interface Consultation {
 export default function ConsultationsPage() {
   const [consultations, setConsultations] = useState<Consultation[]>([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   async function charger() {
-    const res = await fetch("/api/consultations");
-    const data = await res.json();
-    setConsultations(data);
-    setLoading(false);
+    try {
+      const res = await fetch("/api/consultations");
+      const data = await res.json();
+      
+      if (!res.ok) {
+        if (res.status === 401) {
+          setError("Erreur 401 : Non autorisé. Vous devez être connecté pour accéder à cette page.");
+        } else {
+          setError(data.error || "Erreur lors du chargement des consultations.");
+        }
+        setLoading(false);
+        return;
+      }
+      
+      setConsultations(data);
+      setLoading(false);
+    } catch (err) {
+      setError("Erreur de connexion au serveur.");
+      setLoading(false);
+    }
   }
 
   useEffect(() => { charger(); }, []);
+
+  if (error) {
+    return (
+      <div className="min-h-[50vh] flex items-center justify-center">
+        <div className="bg-red-50 text-red-700 p-8 rounded-lg shadow-md max-w-lg text-center border border-red-200">
+          <h1 className="text-2xl font-bold mb-4">Accès Refusé</h1>
+          <p>{error}</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div>
