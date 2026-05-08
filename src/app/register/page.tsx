@@ -68,4 +68,3 @@ export default function RegisterPage() {
     </div>
   );
 }
-EOF
