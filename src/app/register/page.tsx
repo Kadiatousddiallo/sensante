@@ -1,3 +1,4 @@
+
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
@@ -35,14 +36,21 @@ export default function RegisterPage() {
   return (
     <div className="flex items-center justify-center min-h-[80vh]">
       <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
-        <h1 className="text-2xl font-bold text-teal-700 mb-6 text-center">Inscription</h1>
+        <h1 className="text-2xl font-bold text-teal-700 mb-6 text-center">
+          Inscription
+        </h1>
         {error && (
-          <p className="bg-red-50 text-red-600 p-3 rounded-lg mb-4 text-sm">{error}</p>
+          <p className="bg-red-50 text-red-600 p-3 rounded-lg mb-4 text-sm">
+            {error}
+          </p>
         )}
         <form onSubmit={handleSubmit} className="space-y-4">
-          <input name="nom" placeholder="Nom" required className="w-full p-3 border rounded-lg" />
-          <input name="prenom" placeholder="Prénom" required className="w-full p-3 border rounded-lg" />
-          <input name="email" type="email" placeholder="Email" required className="w-full p-3 border rounded-lg" />
+          <input name="nom" placeholder="Nom" required
+            className="w-full p-3 border rounded-lg" />
+          <input name="prenom" placeholder="Prénom" required
+            className="w-full p-3 border rounded-lg" />
+          <input name="email" type="email" placeholder="Email" required
+            className="w-full p-3 border rounded-lg" />
           <input name="password" type="password" placeholder="Mot de passe" required minLength={6}
             className="w-full p-3 border rounded-lg" />
           <button type="submit" disabled={loading}
@@ -52,9 +60,12 @@ export default function RegisterPage() {
         </form>
         <p className="text-sm text-gray-500 text-center mt-4">
           Déjà un compte ?{" "}
-          <Link href="/login" className="text-teal-600 hover:underline">Se connecter</Link>
+          <Link href="/login" className="text-teal-600 hover:underline">
+            Se connecter
+          </Link>
         </p>
       </div>
     </div>
   );
 }
+EOF
