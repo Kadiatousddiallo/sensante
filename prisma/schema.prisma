@@ -10,7 +10,6 @@ datasource db {
 }
 
 model Patient {
-medecin/consultations
   id            Int            @id @default(autoincrement())
   nom           String
   prenom        String
@@ -47,6 +46,9 @@ model Consultation {
   userId       Int
   patient      Patient  @relation(fields: [patientId], references: [id])
   user         User     @relation(fields: [userId], references: [id])
+ medecin/consultations
+}
+
 }
   id             Int       @id @default(autoincrement())
   nom            String
@@ -73,4 +75,5 @@ model Consultation {
   createdAt    DateTime  @default(now())
   updatedAt    DateTime  @updatedAt
 }
+main
 main
