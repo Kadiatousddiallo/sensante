@@ -1,16 +1,3 @@
-<<<<<<< HEAD
-export default function ConsultationsPage() {
-  return (
-    <div>
-      <h1 className="text-2xl font-bold">
-        Consultations
-      </h1>
-
-      <p>Page opérationnelle ✔</p>
-    </div>
-  );
-}
-=======
 import ConsultationCard from "@/components/ConsultationCard";
 
 export default function ConsultationsPage() {
@@ -19,6 +6,7 @@ export default function ConsultationsPage() {
       <h1 className="text-2xl font-bold text-gray-800 mb-6">
         Consultations
       </h1>
+
       <div className="space-y-4">
         <ConsultationCard
           patient="Aminata Sow"
@@ -26,6 +14,7 @@ export default function ConsultationsPage() {
           symptomes="Fièvre, toux, fatigue"
           statut="termine"
         />
+
         <ConsultationCard
           patient="Ibrahima Ba"
           date="19 mars 2025"
@@ -36,4 +25,3 @@ export default function ConsultationsPage() {
     </div>
   );
 }
->>>>>>> main
