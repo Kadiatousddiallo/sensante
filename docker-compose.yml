@@ -1,4 +1,5 @@
 version: "3.8"
+
 services:
   db:
     image: postgres:16
@@ -25,6 +26,8 @@ services:
     environment:
       DATABASE_URL: "postgresql://postgres:postgres@db:5432/sensante?schema=public"
       NEXTAUTH_SECRET: "un-secret-aleatoire"
+
+main
       NEXTAUTH_URL: "http://localhost:3000"
       GROQ_API_KEY: "${GROQ_API_KEY}"
     depends_on:
