@@ -24,7 +24,7 @@ export default function ConsultationForm({ onSuccess }: { onSuccess: () => void 
   useEffect(() => {
     fetch("/api/patients")
       .then((res) => res.json())
-      .then(setPatients);
+      .then((data) => setPatients(Array.isArray(data) ? data : []));
   }, []);
 
   function toggleSymptome(s: string) {
@@ -52,7 +52,7 @@ export default function ConsultationForm({ onSuccess }: { onSuccess: () => void 
     });
     if (res.ok) {
       setSymptomes([]);
-      e.currentTarget.reset();
+      (e.target as HTMLFormElement).reset();
       onSuccess();
     }
     setLoading(false);

@@ -11,9 +11,7 @@ export async function GET() {
   const consultations = await prisma.consultation.findMany({
     include: {
       patient: true,
-      user: {
-        select: { nom: true, prenom: true, role: true },
-      },
+      user: { select: { nom: true, prenom: true, role: true } },
     },
     orderBy: { date: "desc" },
   });
